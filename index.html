@@ -1,78 +1,827 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KSkype - Classic Skype on Mac or Windows. Linux.</title>
-    <link rel="icon" type="image/x-icon" href="http://kskype.limpe.fun/ico/favicon.ico">
-    <!-- Open Graph meta tags -->
-    <meta property="og:title" content="KSkype - Classic Skype on Mac or Windows. Linux.">
-    <meta property="og:description" content="Classic Skype in 2024 - KSkype!">
-    <meta property="og:image" content="http://kskype.limpe.fun/assets/v1/tab/imagetab.gif">
-    <meta property="og:url" content="http://kskype.limpe.fun">
-    <!-- Twitter Card meta tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="KSkype - Classic Skype on Mac or Windows. Linux.">
-    <meta name="twitter:description" content="Classic Skype in 2024 - KSkype!">
-    <meta name="twitter:image" content="http://kskype.limpe.fun/assets/v1/tab/imagetab.gif">
-    <!-- Polyfill.io for older browsers -->
-    <script src="https://cdn.polyfill.io/v3/polyfill.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .redirect-message {
-            font-size: 1.5em;
-            color: #333;
-        }
-        .banner {
-            margin-top: 20px;
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var userLang = navigator.language || navigator.userLanguage;
-            var userAgent = navigator.userAgent;
-            var redirectUrl;
+<!DOCTYPE html><html class="noTabletState en " data-language="en" lang="en"><head>
+		
 
-            function isLegacyBrowser() {
-                var isIE = /MSIE|Trident/.test(userAgent);
-                var isOldChrome = /Chrome\/([0-9]+)/.test(userAgent) && parseInt(RegExp.$1, 10) <= 20;
-                var isOldFirefox = /Firefox\/([0-9]+)/.test(userAgent) && parseInt(RegExp.$1, 10) <= 20;
-                return isIE || isOldChrome || isOldFirefox;
-            }
+	<!-- Meta info -->
+	<meta charset="utf-8">
+	<title>Free Skype internet calls and cheap calls to phones online - Skype</title>
+	<meta name="description" content="Make internet calls for free with Skype. Sign up today and discover a whole new world of staying in touch.">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width">
 
-            if (isLegacyBrowser()) {
-                if (userLang.indexOf('ru') === 0) {
-                    redirectUrl = 'https://kskype.limpe.fun/legacy/ru/homepage';
-                } else {
-                    redirectUrl = 'https://kskype.limpe.fun/legacy/en/homepage';
-                }
-            } else {
-                if (userLang.indexOf('ru') === 0) {
-                    redirectUrl = 'https://kskype.limpe.fun/ru';
-                } else if (userLang.indexOf('uk') === 0) {
-                    redirectUrl = 'https://kskype.limpe.fun/ua';
-                } else {
-                    redirectUrl = 'https://kskype.limpe.fun/en';
-                }
-            }
+	
+	
+	<!-- Default Assets -->
+	<link rel="stylesheet" href="../i/scom/combined/css/skype.min.css" type="text/css" media="screen">
 
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'https://kskype.limpe.fun/assets/v1/load', true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    document.body.innerHTML = xhr.responseText;
-                    window.location.href = redirectUrl;
-                }
-            };
-            xhr.send();
-        });
+
+    <!--   
+     NOTICE:  Third party scripts and code linked to or referenced here are not licensed to you by   
+     the third parties that own such code, not by Microsoft, see ASP.NET Ajax CDN Terms of Use â
+     http://www.asp.net/ajaxlibrary/CDN.ashx
+    -->
+	<script type="text/javascript" src="../ajax/jquery/jquery-1.7.2.min.js"></script>
+
+	<script type="text/javascript" src="../i/scom/combined/js/skype.min.js"></script>
+	
+	<script type="text/javascript">
+    SKYPE.settings = {};
+	SKYPE.settings.api = {
+		    sessionApiUrl: ""
+    }
     </script>
+
+	
 </head>
 <body>
-    <div class="redirect-message">Redirecting...</div>
-</body>
-</html>
+	
+	
+	<nav id="scom" class="isNotAuthenticated" data-content-key="authenticationStatus">
+		<div class="centerWrapper">
+			<a href="index.html" class="skypeLogo" title="Home"></a>
+			<a href="index.html" id="mobileMenu" data-sc="mobile_menu"></a>
+			<div class="mainNavigation">
+				<ul>
+					<li class="noDesktop">
+						<a href="index.html" id="closeMenu">Close menu</a>
+					</li>
+					<li class="noDesktop">
+						<a href="index.html" id="homeLink">Home</a>
+					</li>
+					
+						<li class="">
+							<a data-sc="header_what_is_skype" href="what-is-skype/index.html">learn</a>
+							<script type="text/javascript">
+							var s_el = s_el || {};
+							s_el.header_what_is_skype = {click: {events: "event35", eVar19: "header: what_is_skype", prop18: "D=v19"}};
+							</script>
+							 
+								<ul class="sub">
+									
+										<li>
+											<a data-sc="header_what_is_skype" href="what-is-skype/index.html" title="what is Skype?">what is Skype?</a>
+											<script type="text/javascript">
+											var s_el = s_el || {};
+											s_el.header_what_is_skype = {click: {events: "event35", eVar19: "header: what_is_skype", prop18: "D=v19"}};
+											</script>											
+										</li>
+									
+										<li>
+											<a data-sc="header_features" href="features/index.html" title="features">features</a>
+											<script type="text/javascript">
+											var s_el = s_el || {};
+											s_el.header_features = {click: {events: "event35", eVar19: "header: features", prop18: "D=v19"}};
+											</script>											
+										</li>
+									
+										<li>
+											<a data-sc="header_business" href="business/index.html" title="business">business</a>
+											<script type="text/javascript">
+											var s_el = s_el || {};
+											s_el.header_business = {click: {events: "event35", eVar19: "header: business", prop18: "D=v19"}};
+											</script>											
+										</li>
+									
+								</ul>
+							
+						</li>
+					
+						<li class="">
+							<a data-sc="header_rates" href="rates/index.html" title="prices">prices</a>
+							<script type="text/javascript">
+							var s_el = s_el || {};
+							s_el.header_rates = {click: {events: "event35", eVar19: "header: rates", prop18: "D=v19"}};
+							</script>
+							 
+								<ul class="sub">
+									
+										<li>
+											<a data-sc="header_rates" href="rates/index.html" title="rates">rates</a>
+											<script type="text/javascript">
+											var s_el = s_el || {};
+											s_el.header_rates = {click: {events: "event35", eVar19: "header: rates", prop18: "D=v19"}};
+											</script>											
+										</li>
+									
+										<li>
+											<a data-sc="header_premium" href="premium/index.html" title="premium">premium</a>
+											<script type="text/javascript">
+											var s_el = s_el || {};
+											s_el.header_premium = {click: {events: "event35", eVar19: "header: premium", prop18: "D=v19"}};
+											</script>											
+										</li>
+									
+										<li>
+											<a data-sc="header_special_offers" href="special-offers/index.html" title="special offers">special offers</a>
+											<script type="text/javascript">
+											var s_el = s_el || {};
+											s_el.header_special_offers = {click: {events: "event35", eVar19: "header: special_offers", prop18: "D=v19"}};
+											</script>											
+										</li>
+									
+										<li>
+											<a data-sc="header_shop" href="../go/shop/index.html" title="shop">shop</a>
+											<script type="text/javascript">
+											var s_el = s_el || {};
+											s_el.header_shop = {click: {events: "event35", eVar19: "header: shop", prop18: "D=v19"}};
+											</script>											
+										</li>
+									
+								</ul>
+							
+						</li>
+					
+						<li class="singleItem">
+							<a data-sc="header_download_skype" href="download-skype/index.html" title="downloads">downloads</a>
+							<script type="text/javascript">
+							var s_el = s_el || {};
+							s_el.header_download_skype = {click: {events: "event35", eVar19: "header: download_skype", prop18: "D=v19"}};
+							</script>
+							
+						</li>
+					
+						<li class="singleItem">
+							<a data-sc="header_support_skype_com" href="https://support.skype.com" title="support">support</a>
+							<script type="text/javascript">
+							var s_el = s_el || {};
+							s_el.header_support_skype_com = {click: {events: "event35", eVar19: "header: support_skype_com", prop18: "D=v19"}};
+							</script>
+							
+						</li>
+					
+					
+						<li class="noDesktop singleItem">
+							<a href="../go/myaccount/index.html" data-sc="header_profile" data-link-type="profile" title="My Account">My Account</a>
+						</li>
+						
+						<li class="noDesktop singleItem notAuthenticated">
+							<a href="../go/myaccount/index.html" class="notAuthenticated" data-sc="header_login" data-link-type="login" title="Sign in">Sign in</a>
+						</li>
+						
+						
+					
+					
+					
+				</ul>
+			</div>
+			
+			
+			<ul class="account notAuthenticated noMobile">
+				<li><a href="../go/myaccount/index.html" data-sc="header_login" data-link-type="login" title="Sign in">Sign in</a></li>
+				<li class="noMobile"><a href="../go/joinskype/index.html" data-sc="header_join" data-link-type="join" title="Join us">Join us</a></li>
+			</ul>
+				<script type="text/javascript">
+					var s_el = s_el || {};
+					s_el.header_login = {click: {events: "event35", eVar19: "tray: sign-in", prop18: "D=v19"}};
+					s_el.header_join = {click: {events: "event35", eVar19: "tray: sign-up", prop18: "D=v19"}};
+				</script>			
+			
+			
+			
+			<ul class="account authenticated noMobile">
+				<li class="username"><a href="../go/myaccount/index.html" data-sc="header_profile" data-link-type="profile" data-content-key="skypename" title="My Account">My Account</a></li>
+				<li><a href="../go/logout/index.html" data-sc="header_logout" data-link-type="logout" title="Sign out">Sign out</a></li>
+			</ul>
+			
+			
+			<!-- For mobile-->
+			<ul class="account noDesktop noTablet">
+				<li><a href="index.html" data-sc="mobile_menu" data-link-type="" id="mobileMenuLink">Menu</a></li>
+			</ul>
+			<script type="text/javascript">
+				var s_el = s_el || {};
+				s_el.mobile_menu = {click: {events: "event36", eVar19: "mobile nav flyout", prop18: D="v19"}};
+			</script>			
+		</div>
+	</nav>
+
+
+
+
+	<div class="parsys mainParsys"><div class="homepageHeader section"> 
+<header>
+	<div class="heroCenter homePage">
+		<div class="noMobile heroIllustrationContainer">
+			<div class="heroIllustrationWrapper">
+				<img src="../i/common/images/misc/dummy.png" style="background-image: url(../content/dam/scom/images/headers/desktop/homepage.jpg)" alt="Free Skype internet calls" class="heroIllustration">
+			</div>
+		</div>
+		<div class="noDesktop noTablet">
+			<img src="../content/dam/scom/images/headers/mobile/hero-mobile-homepage.jpg" alt="" class="heroIllustration">
+		</div>
+		<div class="bubblesWrapper">
+			<div class="bubbles">
+				<div class="headline">
+					<h1 class="h1-large">Wherever you are, wherever they are - Skype keeps you together.</h1>
+				</div>
+				
+					<div class="action noMobile">
+						
+							<script type="text/javascript">
+			                    var s_el = s_el || {};
+			                    s_el.homepagecta = {
+			                            click: function(){
+			                                var _c = {};
+			                                _c.products = s.apl(_c.products, ';;;;;eVar22=home-_-header-_-join');_c.eVar1 = 'home-_-header-_-join';_c.eVar19 = 'home-header:click:join_homepageheader_0';_c.events = s.apl(_c.events,'event6',',');_c.eVar19 = "home:Join:homepageheader_0";_c.events = s.apl(_c.events,'event35',',', 1);
+			                                return _c;
+			                            }
+			                    };
+			                    var s_impression  = s_impression || [];s_impression.push({events: "event5",products: ";;;;;evar22=home-_-header-_-join"});
+			                </script>
+						
+						<a href="../go/joinskype/index.html" title="Join" class="CTA section" data-sc="homepagecta">
+							<h2 class="h2-large">Join</h2>
+							<img src="../i/common/images/misc/dummy.png" class="arrowRight" alt="">
+						</a>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+</header>
+
+</div>
+<div class="section">
+
+    
+    	<section class="whiteToLightFogGradientSmall">
+		    
+		    <div class="parsys"><div class="text section"><div class=" noMobile textComponent component section noMarginBottom">
+	<div class="alignRight">
+		
+			
+			
+				<h2>Want to know more?<br>
+</h2>
+<h3><a href="what-is-skype/index.html">Learn about Skype</a></h3>
+
+			 
+		
+	</div>
+</div>
+</div>
+<div class="downloadButtonOSSpecific section"><div class="component noDesktop noTablet">
+    <div class="buttonContainer">
+        <div class="buttonWrapper">
+            
+                
+                
+                
+                
+            
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="rawHtml section">
+	<div class="component text noDesktop" style="margin-left: auto; margin-right: auto;">
+	<a class="button secondaryCta" href="../go/joinskype/index.html" title="Create an account" data-sc="join">
+		<span class="noIcon">Create an account</span>
+	</a>
+</div>
+<div class="component textComponent noDesktop">
+	<div class="alignCenter">
+		<h2><a href="../go/m.buy.credit/index.html" data-sc="buy_credit"><img src="../i/scom/images/icons/skype-credit-icon-mobile.png" style="vertical-align: middle;" alt=""> <span style="vertical-align: middle; margin-left: 8px;"> Buy Skype Credit </span> </a></h2>
+	</div>
+</div>
+
+</div>
+<div class="carousel section">
+
+    <script type="text/javascript">
+        SKYPE.ResponsiveState.init();
+    </script>
+    <div class="homepageCarousel component" data-slide-rotation-interval="10">
+        <ul class="gallerySlides">
+            
+                <li class="active" data-slidenumber="1">
+                    
+                                        <div class="slideModule leftAlignedText whiteText clickable">
+                        <img src="../content/dam/scom/images/carousel/desktop/fswl-468.jpg" alt="Skype with love">
+                        <div class="textArea ">
+                            <h3>Enjoy more ways to keep in touch</h3>
+                            <p>Talk, see and share in new ways. It’s on us for a month.</p>
+                            <a data-sc="xJjTGlCuPo" href="offers/skype-with-love/index.html" title="Start today">Start today</a>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+	                    if (SKYPE.CurrentResponsiveState !== 'mobile') {
+	                        var s_el = s_el || {};
+	                        s_el.xJjTGlCuPo = {
+	                                click: function(){
+	                                    var _c = {};
+	                                    _c.products = s.apl(_c.products, ';;;;;eVar22=home-_-position1-_-SkypeLove');_c.eVar1 = 'home-_-position1-_-SkypeLove';_c.eVar19 = 'home-position1:click:SkypeLove_carousel';_c.events = s.apl(_c.events,'event6',',');_c.eVar19 = "home:<OTHER_CTA>:carousel";_c.events = s.apl(_c.events,'event35',',', 1);
+	                                    return _c;
+	                                }
+	                        };
+	                        var s_impression  = s_impression || [];s_impression.push({events: "event5",products: ";;;;;evar22=home-_-position1-_-SkypeLove"});
+	                    }
+                    </script>
+                    
+                                        <div class="slideModule leftAlignedText grayText clickable">
+                        <img src="../content/dam/scom/images/carousel/desktop/gift-cards-valentine.jpg" alt="Skype Gift Cards">
+                        <div class="textArea whiteText">
+                            <h3>Skype Gift Cards</h3>
+                            <p>Give a bit of Skype Credit and stay in touch with the ones you love.</p>
+                            <a data-sc="wVnwTRQcDo" href="http://shop.skype.com/skype-gift-cards" title="Skype Shop">Learn more</a>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+	                    if (SKYPE.CurrentResponsiveState !== 'mobile') {
+	                        var s_el = s_el || {};
+	                        s_el.wVnwTRQcDo = {
+	                                click: function(){
+	                                    var _c = {};
+	                                    _c.products = s.apl(_c.products, ';;;;;eVar22=home-_-position2-_-gift-cards');_c.eVar1 = 'home-_-position2-_-gift-cards';_c.eVar19 = 'home-position2:click:gift-cards_carousel';_c.events = s.apl(_c.events,'event6',',');_c.eVar19 = "home:<OTHER_CTA>:carousel";_c.events = s.apl(_c.events,'event35',',', 1);
+	                                    return _c;
+	                                }
+	                        };
+	                        var s_impression  = s_impression || [];s_impression.push({events: "event5",products: ";;;;;evar22=home-_-position2-_-gift-cards"});
+	                    }
+                    </script>
+                </li>
+            
+                <li class="" data-slidenumber="2">
+                    
+                                        <div class="slideModule rightAlignedText whiteText clickable">
+                        <img src="../content/dam/scom/images/carousel/desktop/subs-blue.jpg" alt="Save with a subscription">
+                        <div class="textArea ">
+                            <h3>Got a lot to talk about?</h3>
+                            <p>An unlimited subscription is perfect for you. Choose from over 170 countries to call and save 15% when you sign up for 12 months. </p>
+                            <a data-sc="JxtvFChkKn" href="rates/index.html" title="Save with a subscription">Save with a subscription</a>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+	                    if (SKYPE.CurrentResponsiveState !== 'mobile') {
+	                        var s_el = s_el || {};
+	                        s_el.JxtvFChkKn = {
+	                                click: function(){
+	                                    var _c = {};
+	                                    _c.products = s.apl(_c.products, ';;;;;eVar22=home-_-position3-_-<CAMPAIGN_ID>');_c.eVar1 = 'home-_-position3-_-<CAMPAIGN_ID>';_c.eVar19 = 'home-position3:click:<CAMPAIGN_ID>_carousel';_c.events = s.apl(_c.events,'event6',',');_c.eVar19='home:buy:carousel';_c.eVar56='<PRODUCT TYPE>'; _c.products = s.apl(_c.products,'<PRODUCT TYPE>;<PRODUCT CODE>',',', 1); _c.events = s.apl(_c.events,'scAdd',',', 1);
+	                                    return _c;
+	                                }
+	                        };
+	                        var s_impression  = s_impression || [];s_impression.push({events: "event5",products: ";;;;;evar22=home-_-position3-_-<CAMPAIGN_ID>"});
+	                    }
+                    </script>
+                    
+                                        <div class="slideModule rightAlignedText grayText clickable">
+                        <img src="../content/dam/scom/images/carousel/desktop/skype-credit.jpg" alt="Skype Credit">
+                        <div class="textArea ">
+                            <h3>Call who you want, when you want</h3>
+                            <p>Add money to your Skype account and use it when you need to call mobiles and landlines worldwide. </p>
+                            <a data-sc="ubQdppiEQs" href="../go/store.buy.skypecredit" title="Pay as you go with Skype Credit">Pay as you go with Skype Credit</a>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+	                    if (SKYPE.CurrentResponsiveState !== 'mobile') {
+	                        var s_el = s_el || {};
+	                        s_el.ubQdppiEQs = {
+	                                click: function(){
+	                                    var _c = {};
+	                                    _c.products = s.apl(_c.products, ';;;;;eVar22=home-_-position4-_-credit-call-someone');_c.eVar1 = 'home-_-position4-_-credit-call-someone';_c.eVar19 = 'home-position4:click:credit-call-someone_carousel';_c.events = s.apl(_c.events,'event6',',');_c.eVar19='home:buy:carousel';_c.eVar56='credit'; _c.products = s.apl(_c.products,'credit;skypeout10-gbp',',', 1); _c.events = s.apl(_c.events,'scAdd',',', 1);
+	                                    return _c;
+	                                }
+	                        };
+	                        var s_impression  = s_impression || [];s_impression.push({events: "event5",products: ";;;;;evar22=home-_-position4-_-credit-call-someone"});
+	                    }
+                    </script>
+                </li>
+            
+            			<div class="slideModule noDesktop noTablet rightAlignedText whiteText mobileModule clickable">
+				<img src="../content/dam/scom/images/carousel/mobile/fswl-mobile-new.jpg" alt="Skype with love">
+				<div class="textArea whiteText">
+					<p class="title-h3">Talk, see and share in new ways. It’s on us for a month.</p>
+					<a data-sc="lrhmzVEOnT" href="offers/skype-with-love/index.html" title="Start today">Start today</a>
+				</div>
+			</div>
+			<script type="text/javascript">
+				if (SKYPE.CurrentResponsiveState === 'mobile') {
+					var s_el = s_el || {};
+	                s_el.lrhmzVEOnT = {
+	                        click: function(){
+	                            var _c = {};
+	                            
+	                            return _c;
+	                        }
+	                };
+	                
+				}
+			</script>
+			
+        </ul>
+        
+            <ul class="pagination">
+                
+                   <li class="active" data-slidenumber="1">
+                        <a href=""></a>
+                    </li>
+                
+                   <li class="" data-slidenumber="2">
+                        <a href=""></a>
+                    </li>
+                
+            </ul>
+        
+    </div>
+
+</div>
+<div class="rawHtml section">
+	<div class="component textComponent noDesktop"><div class="alignCenter"><h2><a href="../go/forgotpassword/index.html">Forgot password?</a></h2></div></div>
+
+</div>
+</div>
+
+		</section>
+    
+</div>
+</div>
+
+	
+	<footer>
+		<div class="top">
+			<div class="centered">
+				<div class="footerContent">
+					<div class="footerButtons">
+						
+
+	<div class="footerLanguageSelector">
+		<form action="../${LC}/home/index.html" method="get">
+		<label class="languagesDropdown" for="userLanguage">
+			<span class="world"></span>
+			<span id="pickedLanguage" class="language">English</span>
+			<span class="pickDown"></span>
+			<script type="text/javascript">
+				var s_langChange = function (el) {
+					if (s !== undefined && s.trackAction !== undefined) {
+						s.trackAction({events: "event36", eVar19: "language selector: " + $('html').attr('data-language') + " > " + $('#userLanguage').val(), prop18: "D=v19"}, el);
+						}
+					return true;
+				};
+			</script>
+			<select name="userLanguage" id="userLanguage" class="userLanguage" onchange="s_langChange(this);" data-sc="lang_selector">
+				
+				
+				
+				<option value="en" lang="en" selected="selected">English</option>
+				
+				
+				
+				<option value="ar" lang="ar">عربي</option>
+				
+				
+				
+				<option value="bg" lang="bg">Български</option>
+				
+				
+				
+				<option value="cs" lang="cs">Česky</option>
+				
+				
+				
+				<option value="da" lang="da">Dansk</option>
+				
+				
+				
+				<option value="de" lang="de">Deutsch</option>
+				
+				
+				
+				<option value="el" lang="el">Ελληνικά</option>
+				
+				
+				
+				<option value="es" lang="es">Español</option>
+				
+				
+				
+				<option value="et" lang="et">Eesti</option>
+				
+				
+				
+				<option value="fi" lang="fi">Suomi</option>
+				
+				
+				
+				<option value="fr" lang="fr">Français</option>
+				
+				
+				
+				<option value="he" lang="he">עברית</option>
+				
+				
+				
+				<option value="hu" lang="hu">Magyar</option>
+				
+				
+				
+				<option value="id" lang="id">Bahasa Indonesia</option>
+				
+				
+				
+				<option value="it" lang="it">Italiano</option>
+				
+				
+				
+				<option value="ja" lang="ja">日本語</option>
+				
+				
+				
+				<option value="ko" lang="ko">한국어</option>
+				
+				
+				
+				<option value="nl" lang="nl">Nederlands</option>
+				
+				
+				
+				<option value="no" lang="no">Norsk</option>
+				
+				
+				
+				<option value="pl" lang="pl">Polski</option>
+				
+				
+				
+				<option value="pt" lang="pt">Português</option>
+				
+				
+				
+				<option value="pt-br" lang="pt-br">Português (Brasileiro)</option>
+				
+				
+				
+				<option value="ro" lang="ro">Română</option>
+				
+				
+				
+				<option value="ru" lang="ru">Русский</option>
+				
+				
+				
+				<option value="sv" lang="sv">Svenska</option>
+				
+				
+				
+				<option value="tr" lang="tr">Türkçe</option>
+				
+				
+				
+				<option value="uk" lang="uk">Українська</option>
+				
+				
+				
+				<option value="zh-Hans" lang="zh-Hans">中文（简体)</option>
+				
+				
+				
+				<option value="zh-Hant" lang="zh-Hant">中文 (繁體)</option>
+				
+			</select>
+		</label>
+		</form>
+	</div>
+						<div class="footerSocial noMobile">
+							<a href="http://www.facebook.com/Skype"><img alt="Facebook" src="../i/scom/images/icons/facebook.png"></a> 
+							<a href="https://twitter.com/skype"><img alt="Twitter" src="../i/scom/images/icons/twitter.png"></a>				
+						</div>
+					</div>
+					<div class="footerLinks">
+						<ul>
+							
+								<li class="noMobile"><a data-sc="footer_about" href="about/index.html" title="About">About</a>
+										<script type="text/javascript">
+											var s_el = s_el || {};
+											s_el.footer_about = {click: {events: "event35", eVar19: "footer: about", prop18: "D=v19"}};
+										</script>
+								</li>
+							
+								<li class="noMobile"><a data-sc="footer_advertise" href="../go/advertise/index.html" title="Advertise">Advertise</a>
+										<script type="text/javascript">
+											var s_el = s_el || {};
+											s_el.footer_advertise = {click: {events: "event35", eVar19: "footer: advertise", prop18: "D=v19"}};
+										</script>
+								</li>
+							
+								<li class="noMobile"><a data-sc="footer_blogs_skype_com" href="http://blogs.skype.com/" title="Blogs">Blogs</a>
+										<script type="text/javascript">
+											var s_el = s_el || {};
+											s_el.footer_blogs_skype_com = {click: {events: "event35", eVar19: "footer: blogs_skype_com", prop18: "D=v19"}};
+										</script>
+								</li>
+							
+								<li class="noMobile"><a data-sc="footer_legal" href="legal/index.html" title="Legal">Legal</a>
+										<script type="text/javascript">
+											var s_el = s_el || {};
+											s_el.footer_legal = {click: {events: "event35", eVar19: "footer: legal", prop18: "D=v19"}};
+										</script>
+								</li>
+							
+								<li class="noMobile"><a data-sc="footer_jobs" href="../go/jobs/index.html" title="Jobs">Jobs</a>
+										<script type="text/javascript">
+											var s_el = s_el || {};
+											s_el.footer_jobs = {click: {events: "event35", eVar19: "footer: jobs", prop18: "D=v19"}};
+										</script>
+								</li>
+							
+							<li>
+								<a data-sc="sitemapLink" href="site-map/index.html">Sitemap</a>
+								<script type="text/javascript">
+									var s_el = s_el || {};
+									s_el.sitemapLink = {click: {events: "event35", eVar19: "footer: site_map", prop18: "D=v19"}};
+								</script>
+							</li>
+						</ul>
+					</div>
+					<hr>
+					<div class="footerCopyright">
+						<div class="noMobile"><p>© 2013 Skype and/or Microsoft. The Skype name, associated trade marks and logos and the "S" logo are trade marks of Skype or related entities. Use of this website constitutes acceptance of the <a href="legal/tou/index.html">Terms of Use</a> and <a href="legal/privacy/index.html">Privacy and Cookie policy</a>.<br>
+</p>
+</div>
+						<div class="noTablet noDesktop"><p>© 2013 Skype and/or Microsoft. Use of this website constitutes acceptance of the<a href="legal/tou/index.html"> Terms of Use</a> and <a href="legal/privacy/index.html">Privacy and Cookie policy</a>.<br>
+</p>
+</div>
+					</div>
+					<div class="footerWarning">
+						<div class="noCalls">
+							<img src="../i/common/images/misc/dummy.png" alt="No emergency calls">
+						</div>
+						<div class="noMobile"><p><b>No emergency calls with Skype</b><br>
+Skype is not a replacement for your telephone and can't be used for emergency calling<br>
+</p>
+</div>
+						<div class="noDesktop noTablet"><p>No emergency calls with Skype<br>
+</p>
+</div>
+					</div>
+				</div>
+				<div class="footerSlogan noMobile">
+					
+				</div>
+			</div>
+			<div class="footerImageContainer"></div>
+		</div>
+		<div class="bottom">
+			<div class="centered">
+				
+					<p class="noMobile">Stay in touch with Skype. Make free internet calls, send instant messages to friends and even catch up with video chat. Add a little Skype Credit and make cheap calls to phones and mobiles, get online at public WiFi hotspots and send texts (SMS) at great rates. Get even more with a Premium account - discover group video calls and make unlimited calls to a country of your choice.</p>
+				
+				<div class="ms-logo"></div>
+			</div>
+		</div>
+	</footer>
+	<script>
+	//<![CDATA[
+		SKYPE && SKYPE.env && SKYPE.env.Loader.ready();
+	//]]>
+	</script>
+
+
+
+	<!-- TRACKING -->
+<script type="text/javascript" src="../i/tracking/js/s_code_20121127.js"></script>
+<noscript><img src="http://metrics.skype.com/b/ss/skypeglobalprod/1/H.25--NS/0" height="1" width="1" style="border: 0" alt=""/></noscript>
+<script type="text/javascript">
+
+    /*
+    * Fix iOS5 cache problem with forced reload
+    */
+
+    if((/iphone|ipod|ipad.*os 5/gi).test(navigator.appVersion)) {
+
+        window.onpageshow = function(evt) {
+
+            if (evt.persisted) {
+                
+                document.body.style.display = "none";
+                location.reload();
+            }
+        };
+    }
+
+    var _t      = {};
+    _t.pageName = "static/home";
+    _t.channel  = "home";
+    _t.prop5    = _t.eVar5 = "en";
+    SKYPE.ResponsiveState.init();
+    _t.eVar54   =  SKYPE.CurrentResponsiveState;
+    _t.eVar71 = "";
+    _t.prop36   = "";
+    s.trackPage(_t);
+    
+    $(function() {
+        $(document).on('click.sc', 'a[data-sc]:not(select)', function(e) {
+            
+            if (typeof s_el[$(this).attr('data-sc')] == 'undefined')
+                return;
+            
+            var tracking_obj = s_el[$(this).attr('data-sc')].click;
+            
+            if (typeof tracking_obj === 'function'){
+                tracking_obj = tracking_obj.call(); 
+            }
+            
+            if (tracking_obj.asPage === true) {
+                s.trackPage(tracking_obj);
+            } else {
+                s.trackAction(tracking_obj);
+            }
+            
+        })
+    });
+</script>
+
+	
+    
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+		
+		    SKYPE.ResponsiveState.init();
+		
+		    if (SKYPE.CurrentResponsiveState !== 'mobile') {
+		
+		        var scriptsArr = document.getElementsByTagName('script'),
+		            protocol = ('https:' == document.location.protocol ? 'https://' : 'http://');
+		            headEl = scriptsArr[0].parentNode;
+		
+		        var uz = document.createElement('script'); 
+		            uz.type = 'text/javascript'; 
+		            uz.async = true; 
+		            uz.charset = 'utf-8';
+		            uz.src = protocol + 'cdn4.userzoom.com/custom/js/F5C9FDBB49F6DF1188490022196C4538.js';
+		        
+		        var track = document.createElement('script'); 
+		            track.type = 'text/javascript'; 
+		            track.async = true; 
+		            track.charset = 'utf-8';
+		            track.src = protocol + 'cdn3.userzoom.com/uz.js?cuid=F5C9FDBB49F6DF1188490022196C4538';
+		        
+		        headEl.insertBefore(uz, scriptsArr[0]);
+		        headEl.insertBefore(track, scriptsArr[1]);
+		    }
+		});
+	
+	</script>
+
+
+
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var link=e.target.closest && e.target.closest('a[data-link-type="login"],a[data-link-type="profile"],a[data-link-type="join"],a[data-sc="join"],a[data-sc="homepagecta"]');
+    if(!link) return;
+    var type=link.getAttribute('data-link-type');
+    var isJoin=type==='join' || link.getAttribute('data-sc')==='join' || link.getAttribute('data-sc')==='homepagecta';
+    e.preventDefault(); e.stopImmediatePropagation();
+    if(type==='profile' && document.getElementById('scom').classList.contains('isAuthenticated')){
+      window.location.assign('/secure/portal/profile/');
+    }else{
+      window.location.assign(isJoin ? '/go/joinskype/' : '/go/myaccount/');
+    }
+  }, true);
+})();
+</script>
+
+<script>
+(function(){
+  function updateHeader(session){
+    if(!session || !session.authenticated) return;
+
+    var nav=document.getElementById('scom');
+    if(nav){
+      nav.classList.remove('isNotAuthenticated');
+      nav.classList.add('isAuthenticated');
+    }
+
+    document.querySelectorAll('ul.account.notAuthenticated').forEach(function(ul){ul.style.display='none'});
+    document.querySelectorAll('ul.account.authenticated').forEach(function(ul){ul.style.display='block'});
+
+    document.querySelectorAll('ul.account.authenticated li.username a').forEach(function(a){
+      a.textContent=session.username;
+      a.title='My Account';
+      a.href='/secure/portal/profile/';
+      a.setAttribute('data-link-type','profile');
+    });
+    document.querySelectorAll('ul.account.authenticated a[data-link-type="logout"]').forEach(function(a){
+      a.textContent='Sign out';
+      a.title='Sign out';
+      a.href='#signout';
+    });
+  }
+
+  fetch('/portal/api/session',{credentials:'same-origin'})
+    .then(function(r){return r.json()})
+    .then(updateHeader)
+    .catch(function(){});
+
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[data-link-type="logout"]');
+    if(!a)return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    fetch('/portal/api/logout',{method:'POST',credentials:'same-origin'}).then(function(){location.href='/'});
+  },true);
+})();
+</script>
+</body></html>
