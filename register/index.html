@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Create your account - KSkype</title>
+	<link rel="icon" href="../assets/v1/favicons/favicon.ico" type="image/x-icon">
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		body {
+			font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+			background: -webkit-linear-gradient(top, #0f7ec4 0%, #00aff0 100%);
+			background: linear-gradient(to bottom, #0f7ec4 0%, #00aff0 100%);
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			color: #333;
+			padding: 24px 0;
+			box-sizing: border-box;
+		}
+		.card {
+			width: 380px;
+			max-width: calc(100% - 40px);
+			background: #fff;
+			border-radius: 4px;
+			box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+			padding: 32px 34px 26px;
+			box-sizing: border-box;
+		}
+		.logo {
+			display: block;
+			width: 120px;
+			margin: 0 auto 22px;
+		}
+		h1 {
+			font-size: 21px;
+			font-weight: 300;
+			text-align: center;
+			margin: 0 0 4px;
+			color: #1c1c1c;
+		}
+		h1 strong {
+			font-weight: 600;
+		}
+		.subtitle {
+			text-align: center;
+			font-size: 13px;
+			color: #7a7a7a;
+			margin: 0 0 22px;
+		}
+		label {
+			display: block;
+			font-size: 12px;
+			color: #5b5b5b;
+			margin: 0 0 6px;
+		}
+		input[type="text"],
+		input[type="password"] {
+			width: 100%;
+			box-sizing: border-box;
+			height: 40px;
+			padding: 0 12px;
+			margin: 0 0 14px;
+			border: 1px solid #b9b9b9;
+			border-radius: 2px;
+			font-size: 14px;
+			background: #fff;
+			outline: none;
+		}
+		input:focus {
+			border-color: #00aff0;
+			box-shadow: 0 0 0 1px #00aff0;
+		}
+		button {
+			width: 100%;
+			height: 42px;
+			border: 0;
+			border-radius: 2px;
+			background: #00aff0;
+			color: #fff;
+			font-size: 15px;
+			cursor: pointer;
+			margin-top: 6px;
+		}
+		button:hover {
+			background: #0996ce;
+		}
+		button:disabled {
+			opacity: .6;
+			cursor: default;
+		}
+		.footer {
+			text-align: center;
+			font-size: 12px;
+			color: #9a9a9a;
+			margin: 18px 0 0;
+		}
+		.footer a {
+			color: #00aff0;
+			text-decoration: none;
+		}
+		.error {
+			display: none;
+			background: #fdecea;
+			border: 1px solid #f5c6c2;
+			color: #a94442;
+			font-size: 13px;
+			padding: 8px 10px;
+			border-radius: 2px;
+			margin: 0 0 14px;
+		}
+	</style>
+</head>
+<body>
+	<form class="card" id="registerForm" autocomplete="off">
+		<img class="logo" src="../assets/v1/images/skype.svg" alt="Skype">
+		<h1>Create your <strong>KSkype</strong> account</h1>
+		<p class="subtitle">It only takes a minute</p>
+		<div class="error" id="errorBox"></div>
+		<label for="skypename">Skype name</label>
+		<input type="text" id="skypename" name="skypename" maxlength="32" autocomplete="off">
+		<label for="email">Email or phone number</label>
+		<input type="text" id="email" name="email" maxlength="150" autocomplete="off">
+		<label for="password">Password</label>
+		<input type="password" id="password" name="password" maxlength="150" autocomplete="off">
+		<label for="confirm">Confirm password</label>
+		<input type="password" id="confirm" name="confirm" maxlength="150" autocomplete="off">
+		<button type="submit" id="createAccount">Create account</button>
+		<p class="footer">Already have an account? <a href="../">Back to KSkype</a></p>
+	</form>
+	<script>
+		(function () {
+			var form = document.getElementById('registerForm');
+			var errorBox = document.getElementById('errorBox');
+			var button = document.getElementById('createAccount');
+			var skypename = document.getElementById('skypename');
+			var email = document.getElementById('email');
+			var password = document.getElementById('password');
+			var confirm = document.getElementById('confirm');
+
+			function fail(message) {
+				errorBox.textContent = message;
+				errorBox.style.display = 'block';
+			}
+
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+				errorBox.style.display = 'none';
+
+				var name = (skypename.value || '').trim();
+				var mail = (email.value || '').trim();
+				var pass = password.value || '';
+				var pass2 = confirm.value || '';
+
+				if (!name) { return fail('Please choose a Skype name.'); }
+				if (!/^[a-z][a-z0-9._-]{5,31}$/i.test(name)) { return fail('Skype names must start with a letter and be at least 6 characters.'); }
+				if (!mail) { return fail('Please enter an email address or phone number.'); }
+				if (pass.length < 6) { return fail('Your password must be at least 6 characters.'); }
+				if (pass !== pass2) { return fail('The passwords do not match.'); }
+
+				button.disabled = true;
+				button.textContent = 'Creating account...';
+
+				var finish = new URL('../oauth20_desktop.srf', location.href).href;
+				var authorize = new URL('../oauth20_authorize.srf', location.href).href;
+				var params = {
+					client_id: '00000000480BC46C',
+					scope: 'service::lw.skype.com::MBI_SSL',
+					response_type: 'token',
+					redirect_uri: finish,
+					signup: '1',
+					cobrandid: '90010',
+					lw: '1',
+					locale: (navigator.language || 'en-US'),
+					username: name,
+					email: mail
+				};
+				var query = Object.keys(params).map(function (k) {
+					return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
+				}).join('&');
+
+				window.setTimeout(function () {
+					location.href = authorize + '?' + query;
+				}, 600);
+			});
+		})();
+	</script>
+</body>
+</html>

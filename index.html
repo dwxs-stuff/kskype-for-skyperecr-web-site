@@ -778,7 +778,7 @@ Skype is not a replacement for your telephone and can't be used for emergency ca
     if(type==='profile' && document.getElementById('scom').classList.contains('isAuthenticated')){
       window.location.assign('/secure/portal/profile/');
     }else{
-      window.location.assign(isJoin ? '/login/' : '/login/');
+      window.location.assign(isJoin ? '/go/joinskype/' : '/go/myaccount/');
     }
   }, true);
 })();
