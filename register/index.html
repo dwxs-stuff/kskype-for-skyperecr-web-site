@@ -170,27 +170,31 @@
 				button.disabled = true;
 				button.textContent = 'Creating account...';
 
-				var finish = new URL('../oauth20_desktop.srf', location.href).href;
-				var authorize = new URL('../oauth20_authorize.srf', location.href).href;
-				var params = {
-					client_id: '00000000480BC46C',
-					scope: 'service::lw.skype.com::MBI_SSL',
-					response_type: 'token',
-					redirect_uri: finish,
-					signup: '1',
-					cobrandid: '90010',
-					lw: '1',
-					locale: (navigator.language || 'en-US'),
-					username: name,
-					email: mail
-				};
-				var query = Object.keys(params).map(function (k) {
-					return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
-				}).join('&');
-
-				window.setTimeout(function () {
-					location.href = authorize + '?' + query;
-				}, 600);
+				fetch('/api/register', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ username: name, email: mail, password: pass })
+				}).then(function (response) {
+					return response.json().catch(function () { return {}; }).then(function (data) {
+						if (!response.ok) {
+							throw new Error(data.error === 'invalid_password'
+								? 'That name is already taken. Try signing in instead.'
+								: 'Could not create your account. Please try again.');
+						}
+						return data;
+					});
+				}).then(function (data) {
+					var finish = new URL('../oauth20_desktop.srf', location.href).href;
+					location.href = finish +
+						'#access_token=' + encodeURIComponent(data.access_token) +
+						'&refresh_token=' + encodeURIComponent(data.refresh_token) +
+						'&expires_in=' + encodeURIComponent(data.expires_in || 3600) +
+						'&skype_name=' + encodeURIComponent(data.skype_name || name);
+				}).catch(function (err) {
+					button.disabled = false;
+					button.textContent = 'Create account';
+					fail(err && err.message ? err.message : 'Could not create your account. Please try again.');
+				});
 			});
 		})();
 	</script>

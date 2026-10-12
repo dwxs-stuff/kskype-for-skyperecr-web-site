@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign in - KSkype</title>
+	<link rel="icon" href="../assets/v1/favicons/favicon.ico" type="image/x-icon">
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		body {
+			font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+			background: -webkit-linear-gradient(top, #0f7ec4 0%, #00aff0 100%);
+			background: linear-gradient(to bottom, #0f7ec4 0%, #00aff0 100%);
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			color: #333;
+			padding: 24px 0;
+			box-sizing: border-box;
+		}
+		.card {
+			width: 360px;
+			max-width: calc(100% - 40px);
+			background: #fff;
+			border-radius: 4px;
+			box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+			padding: 32px 34px 26px;
+			box-sizing: border-box;
+		}
+		.logo {
+			display: block;
+			width: 120px;
+			margin: 0 auto 22px;
+		}
+		h1 {
+			font-size: 21px;
+			font-weight: 300;
+			text-align: center;
+			margin: 0 0 4px;
+			color: #1c1c1c;
+		}
+		h1 strong {
+			font-weight: 600;
+		}
+		.subtitle {
+			text-align: center;
+			font-size: 13px;
+			color: #7a7a7a;
+			margin: 0 0 22px;
+		}
+		label {
+			display: block;
+			font-size: 12px;
+			color: #5b5b5b;
+			margin: 0 0 6px;
+		}
+		input[type="password"] {
+			width: 100%;
+			box-sizing: border-box;
+			height: 40px;
+			padding: 0 12px;
+			margin: 0 0 16px;
+			border: 1px solid #b9b9b9;
+			border-radius: 2px;
+			font-size: 14px;
+			background: #fff;
+			outline: none;
+		}
+		input:focus {
+			border-color: #00aff0;
+			box-shadow: 0 0 0 1px #00aff0;
+		}
+		button {
+			width: 100%;
+			height: 42px;
+			border: 0;
+			border-radius: 2px;
+			background: #00aff0;
+			color: #fff;
+			font-size: 15px;
+			cursor: pointer;
+		}
+		button:hover {
+			background: #0996ce;
+		}
+		button:disabled {
+			opacity: .6;
+			cursor: default;
+		}
+		.footer {
+			text-align: center;
+			font-size: 12px;
+			color: #9a9a9a;
+			margin: 20px 0 0;
+		}
+		.footer a {
+			color: #00aff0;
+			text-decoration: none;
+		}
+		.error {
+			display: none;
+			background: #fdecea;
+			border: 1px solid #f5c6c2;
+			color: #a94442;
+			font-size: 13px;
+			padding: 8px 10px;
+			border-radius: 2px;
+			margin: 0 0 16px;
+		}
+	</style>
+</head>
+<body>
+	<form class="card" id="loginForm" autocomplete="off">
+		<img class="logo" src="../assets/v1/images/skype.svg" alt="Skype">
+		<h1>Sign in to <strong>KSkype</strong></h1>
+		<p class="subtitle">Enter your password to continue</p>
+		<div class="error" id="errorBox"></div>
+		<label for="password">Password</label>
+		<input type="password" id="password" name="password" maxlength="150" autocomplete="off" autofocus>
+		<button type="submit" id="signIn">Sign in</button>
+		<p class="footer">Not you? <a href="../register/">Create a new account</a></p>
+	</form>
+	<script>
+		(function () {
+			var form = document.getElementById('loginForm');
+			var errorBox = document.getElementById('errorBox');
+			var signIn = document.getElementById('signIn');
+			var password = document.getElementById('password');
+
+			function getQuery(name) {
+				try {
+					return new URLSearchParams(location.search).get(name) || '';
+				} catch (e) {
+					var match = new RegExp('[?&]' + name + '=([^&]*)').exec(location.search);
+					return match ? decodeURIComponent(match[1]) : '';
+				}
+			}
+
+			var username = getQuery('username');
+
+			function fail(message) {
+				errorBox.textContent = message;
+				errorBox.style.display = 'block';
+			}
+
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+				errorBox.style.display = 'none';
+
+				var pass = password.value || '';
+				if (!username) {
+					return fail('Your account could not be found. Please start again.');
+				}
+				if (!pass) {
+					return fail('Enter your password.');
+				}
+
+				signIn.disabled = true;
+				signIn.textContent = 'Signing in...';
+				password.disabled = true;
+
+				fetch('/api/login', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ username: username, password: pass })
+				}).then(function (response) {
+					return response.json().catch(function () { return {}; }).then(function (data) {
+						if (!response.ok) {
+							throw new Error(data.error === 'invalid_password'
+								? 'Incorrect password. Please try again.'
+								: 'Sign in failed. Please try again.');
+						}
+						return data;
+					});
+				}).then(function (data) {
+					var finish = new URL('../oauth20_desktop.srf', location.href).href;
+					location.href = finish +
+						'#access_token=' + encodeURIComponent(data.access_token) +
+						'&refresh_token=' + encodeURIComponent(data.refresh_token) +
+						'&expires_in=' + encodeURIComponent(data.expires_in || 3600) +
+						'&skype_name=' + encodeURIComponent(data.skype_name || username);
+				}).catch(function (err) {
+					signIn.disabled = false;
+					signIn.textContent = 'Sign in';
+					password.disabled = false;
+					fail(err && err.message ? err.message : 'Sign in failed. Please try again.');
+				});
+			});
+		})();
+	</script>
+</body>
+</html>
